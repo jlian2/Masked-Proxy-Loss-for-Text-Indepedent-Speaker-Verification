@@ -4,36 +4,41 @@ pip install -r requirements.txt
 ```
 
 
-#### Training and Evaluating
+#### Training
 
 ```
 Train on mp_balance(Recommend):
 
-python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp_balance --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 300 --lr 0.2 --max_frames 350 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
-
-Train on mp:
-
-python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 200 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp_balance --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 350 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
 
 Train on mmp_balance:
 
 python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_balance2 --optimizer sgd --save_path res_model/test_mmp_balance2 --batch_size 200 --lr 0.2 --max_frames 350 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
 
-Eval: 
+Train on mp:
+
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 200 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
+
+Train on mmp:
+
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 200 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
+
+```
+#### Eval: 
 
 SOTA model on 4s segment: (EER = 2.0308%)
 
 python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 400 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1 --eval --initial_model voxceleb_pretrained.model
 
-```
-####
+
+#### Pretrained Model
 
 Here is the pretrained model:
 https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing
 
 #### Data
 
-The [VoxCeleb](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/) datasets are used for these experiments.
+VoxCeleb: (http://www.robots.ox.ac.uk/~vgg/data/voxceleb/)
 
 The train list should contain the identity and the file path, one line per utterance, as follows:
 ```
@@ -41,8 +46,8 @@ id00000 id00000/youtube_key/12345.wav
 id00012 id00012/21Uxsk56VDQ/00001.wav
 ```
 
-The train list for VoxCeleb2 can be download from [here](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/meta/train_list.txt) and the
-test list for VoxCeleb1 from [here](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/meta/veri_test.txt).
+train_list.txt corresponds to VoxCeleb2 dev set(5994 classes)
+veri_list.txt contains evaluation pairs coming from VoxCeleb1 test set.
 
 
 #### Citation
