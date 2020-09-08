@@ -4,10 +4,28 @@ pip install -r requirements.txt
 ```
 
 
-#### Training example
+#### Training and Evaluating
 
 ```
-python ./trainSpeakerNet.py --model ResNetSE34 --encoder SAP --trainfunc amsoftmax --optimizer adam --save_path data/exp1 --batch_size 200 --max_frames 200 --scale 30 --margin 0.3 --train_list /home/joon/voxceleb/train_list.txt --test_list /home/joon/voxceleb/test_list.txt --train_path /home/joon/voxceleb/voxceleb2 --test_path /home/joon/voxceleb/voxceleb1
+Train on mp_balance(Recommend):
+
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp_balance --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 300 --lr 0.2 --max_frames 350 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
+
+Train on mp:
+
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 200 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
+
+Train on mmp_balance:
+
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_balance2 --optimizer sgd --save_path res_model/test_mmp_balance2 --batch_size 200 --lr 0.2 --max_frames 350 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1
+
+Eval: 
+
+SOTA model on 4s segment: (EER = 2.0308%)
+
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 400 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1 --eval --initial_model /home/ubuntu/voxceleb/voxceleb_trainer/res_model/balance_regular_lambda_0_5_res_2_06_130epoches_batch350_max350/model/model00000
+0125.model
+
 ```
 
 #### Pretrained model
@@ -33,22 +51,6 @@ id00012 id00012/21Uxsk56VDQ/00001.wav
 The train list for VoxCeleb2 can be download from [here](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/meta/train_list.txt) and the
 test list for VoxCeleb1 from [here](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/meta/veri_test.txt).
 
-#### Replicating the results from the paper
-
-1. Model definitions
-  - `VGG-M-40` in the paper is `VGGVox` in the code.
-  - `Thin ResNet-34` is in the paper `ResNetSE34` in the code.
-  - `Fast ResNet-34` is in the paper `ResNetSE34L` in the code.
-
-2. For metric learning objectives, the batch size in the paper is `nSpeakers` multiplied by `batch_size` in the code. For the batch size of 800 in the paper, use `--nSpeakers 2 --batch_size 400`, `--nSpeakers 3 --batch_size 266`, etc.
-
-3. The models have been trained with `--max_frames 200` and evaluated with `--max_frames 400`.
-
-4. You can get a good balance between speed and performance using the configuration below.
-
-```
-python ./trainSpeakerNet.py --model ResNetSE34L --trainfunc angleproto --batch_size 400 --nSpeakers 2 --train_list /home/joon/voxceleb/train_list.txt --test_list /home/joon/voxceleb/test_list.txt --train_path /home/joon/voxceleb/voxceleb2 --test_path /home/joon/voxceleb/voxceleb1
-```
 
 #### Citation
 
