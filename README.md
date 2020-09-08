@@ -1,23 +1,8 @@
-## VoxCeleb trainer
-
-This repository contains the training code for 'In defence of metric learning for speaker recognition.'
-
 #### Dependencies
 ```
 pip install -r requirements.txt
 ```
 
-#### Data preparation
-
-The following script can be used to download and prepare the VoxCeleb dataset for training.
-
-```
-python ./dataprep.py --save_path /home/joon/voxceleb --download --user USERNAME --password PASSWORD 
-python ./dataprep.py --save_path /home/joon/voxceleb --extract
-python ./dataprep.py --save_path /home/joon/voxceleb --convert
-```
-
-In addition to the Python dependencies, `wget` and `ffmpeg` must be installed on the system.
 
 #### Training example
 
@@ -33,25 +18,6 @@ You can check that the following script returns: `EER 2.2322`.
 
 ```
 python ./trainSpeakerNet.py --eval --model ResNetSE34L --trainfunc angleproto --save_path data/test --max_frames 300 --test_list /home/joon/voxceleb/test_list.txt --test_path /home/joon/voxceleb/voxceleb1 --initial_model baseline_lite_ap.model
-```
-
-#### Implemented loss functions
-```
-Softmax (softmax)
-AM-Softmax (amsoftmax)
-AAM-Softmax (aamsoftmax)
-GE2E (ge2e)
-Prototypical (proto)
-Triplet (triplet)
-Contrastive (contrastive)
-Angular Prototypical (angleproto)
-```
-
-#### Implemented models and encoders
-```
-ResNetSE34 (SAP)
-ResNetSE34L (SAP)
-VGGVox40 (SAP, TAP, MAX)
 ```
 
 #### Data
