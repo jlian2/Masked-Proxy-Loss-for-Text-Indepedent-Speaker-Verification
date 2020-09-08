@@ -1,8 +1,8 @@
 #### Mask Proxy Loss for Text-Independent Speaker Recognition
 
-```
+
 https://drive.google.com/file/d/1XQ2vLhQWnRXUfiS-JR_g9m_taNVS11fR/view?usp=sharing
-```
+
 
 #### Dependencies
 ```
@@ -40,9 +40,9 @@ python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_ba
 
 #### Pretrained Model
 
-```
+
 (https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing)
-```
+
 
 #### Data
 
