@@ -48,7 +48,7 @@ id00000 id00000/youtube_key/12345.wav
 id00012 id00012/21Uxsk56VDQ/00001.wav
 ```
 
-train_list.txt identities from VoxCeleb2 dev set(5994 classes) 
+train_list.txt identities from VoxCeleb2 dev set(5994 classes)   
 veri_list.txt contains evaluation pairs from VoxCeleb1 test set.
 
 
