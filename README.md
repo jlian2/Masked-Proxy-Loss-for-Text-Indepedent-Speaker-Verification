@@ -35,8 +35,7 @@ python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --o
 #### Pretrained Model
 
 ```
-Here is the pretrained model:
-https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing
+(https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing)
 ```
 
 #### Data
