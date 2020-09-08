@@ -29,7 +29,7 @@ python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp --
 ```
 SOTA model on 4s segment: (EER = 2.0308%)
 
-python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mp --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 400 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1 --eval --initial_model voxceleb_pretrained.model
+python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_balance --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 400 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1 --eval --initial_model voxceleb_pretrained.model
 ```
 
 #### Pretrained Model
@@ -49,7 +49,7 @@ id00012 id00012/21Uxsk56VDQ/00001.wav
 ```
 
 train_list.txt identities from VoxCeleb2 dev set(5994 classes)   
-veri_list.txt contains evaluation pairs from VoxCeleb1 test set.
+veri_list.txt contains evaluation pairs from VoxCeleb1 test set
 
 
 #### Citation
