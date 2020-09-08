@@ -41,7 +41,7 @@ python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_ba
 #### Pretrained Model
 
 
-(https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing)
+https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing
 
 
 #### Data
