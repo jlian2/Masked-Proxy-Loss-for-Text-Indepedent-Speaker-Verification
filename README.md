@@ -1,3 +1,9 @@
+#### Mask Proxy Loss for Text-Independent Speaker Recognition
+
+```
+https://drive.google.com/file/d/1XQ2vLhQWnRXUfiS-JR_g9m_taNVS11fR/view?usp=sharing
+```
+
 #### Dependencies
 ```
 pip install -r requirements.txt
@@ -54,7 +60,7 @@ veri_list.txt contains evaluation pairs from VoxCeleb1 test set
 
 #### Citation
 
-Please cite the following if you make use of the code.
+The baseline model is based on:
 
 ```
 @article{chung2020in,
