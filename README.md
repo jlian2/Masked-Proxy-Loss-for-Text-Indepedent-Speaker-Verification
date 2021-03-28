@@ -2,7 +2,7 @@
 
 #### Citation
 
-The baseline model is based on:
+The baseline model and code framework is based on:
 
 ```
 @article{chung2020in,
