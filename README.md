@@ -36,12 +36,12 @@ python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp --
 #### Eval: 
 
 ```
-SOTA model on 4s segment: (EER = 2.0308%)
+One of good models on 4s segment:
 
 python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_balance --optimizer sgd --save_path res_model/test_mmp_balance --batch_size 200 --lr 0.2 --max_frames 400 --train_list /home/ubuntu/voxceleb/data/train_list.txt --test_list /home/ubuntu/voxceleb/data/veri_list.txt --train_path /home/ubuntu/voxceleb/data/voxceleb2 --test_path /home/ubuntu/voxceleb/data/voxceleb1 --eval --initial_model voxceleb_pretrained.model
 ```
 
-#### Pretrained Model
+#### One example of Pretrained Models (More will be added later)
 
 
 https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing
