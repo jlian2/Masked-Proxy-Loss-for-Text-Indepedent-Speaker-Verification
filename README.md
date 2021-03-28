@@ -46,16 +46,3 @@ python ./trainSpeakerNet.py --model ResNetSE34L --encoder SAP --trainfunc mmp_ba
 
 https://drive.google.com/file/d/1GlktCa1CsZdB9VAN5kK22st2hOMDDAit/view?usp=sharing
 
-
-#### Data
-
-VoxCeleb: (http://www.robots.ox.ac.uk/~vgg/data/voxceleb/)
-
-The train list should contain the identity and the file path, one line per utterance, as follows:
-```
-id00000 id00000/youtube_key/12345.wav
-id00012 id00012/21Uxsk56VDQ/00001.wav
-```
-
-train_list.txt identities from VoxCeleb2 dev set(5994 classes)   
-veri_list.txt contains evaluation pairs from VoxCeleb1 test set
