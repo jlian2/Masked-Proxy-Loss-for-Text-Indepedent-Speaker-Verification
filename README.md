@@ -1,7 +1,7 @@
-#### Mask Proxy Loss for Text-Independent Speaker Recognition
+#### Masked Proxy Loss for Text-Independent Speaker Recognition
 
 
-https://drive.google.com/file/d/1XQ2vLhQWnRXUfiS-JR_g9m_taNVS11fR/view?usp=sharing
+https://arxiv.org/pdf/2011.04491.pdf
 
 
 #### Dependencies
