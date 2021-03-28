@@ -1,14 +1,17 @@
 #### Masked Proxy Loss for Text-Independent Speaker Recognition
 
+#### Citation
 
-https://arxiv.org/pdf/2011.04491.pdf
+The baseline model is based on:
 
-
-#### Dependencies
 ```
-pip install -r requirements.txt
+@article{chung2020in,
+  title={In defence of metric learning for speaker recognition},
+  author={Chung, Joon Son and Huh, Jaesung and Mun, Seongkyu and Lee, Minjae and Heo, Hee Soo and Choe, Soyeon and Ham, Chiheon and Jung, Sunghwan and Lee, Bong-Jin and Han, Icksang},
+  journal={arXiv preprint arXiv:2003.11982},
+  year={2020}
+}
 ```
-
 
 #### Training
 
@@ -56,17 +59,3 @@ id00012 id00012/21Uxsk56VDQ/00001.wav
 
 train_list.txt identities from VoxCeleb2 dev set(5994 classes)   
 veri_list.txt contains evaluation pairs from VoxCeleb1 test set
-
-
-#### Citation
-
-The baseline model is based on:
-
-```
-@article{chung2020in,
-  title={In defence of metric learning for speaker recognition},
-  author={Chung, Joon Son and Huh, Jaesung and Mun, Seongkyu and Lee, Minjae and Heo, Hee Soo and Choe, Soyeon and Ham, Chiheon and Jung, Sunghwan and Lee, Bong-Jin and Han, Icksang},
-  journal={arXiv preprint arXiv:2003.11982},
-  year={2020}
-}
-```
