@@ -1,4 +1,7 @@
-#### Masked Proxy Loss for Text-Independent Speaker Recognition
+Implementation for Masked Proxy Loss for Text-Independent Speaker Recognition:
+
+https://www.isca-speech.org/archive/interspeech_2021/lian21_interspeech.html
+
 
 #### Citation
 
