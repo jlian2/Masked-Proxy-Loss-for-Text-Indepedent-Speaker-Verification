@@ -1,9 +1,18 @@
-Implementation for Masked Proxy Loss for Text-Independent Speaker Recognition:
+#### The Implementation for Masked Proxy Loss for Text-Independent Speaker Recognition:
 
 https://www.isca-speech.org/archive/interspeech_2021/lian21_interspeech.html
 
+```
+@inproceedings{lian21_interspeech,
+  author={Jiachen Lian and Aiswarya Vinod Kumar and Hira Dhamyal and Bhiksha Raj and Rita Singh},
+  title={{Masked Proxy Loss for Text-Independent Speaker Verification}},
+  year=2021,
+  booktitle={Proc. Interspeech 2021},
+  pages={4638--4642},
+  doi={10.21437/Interspeech.2021-2190}
+}
+```
 
-#### Citation
 
 The baseline model and code framework is based on:
 
